@@ -1597,6 +1597,13 @@ body, p, span, div {
     .circle-container {
       margin: 20px 0;
     }
+
+    /* Hide 'About', page number '01', and 'Roca template' text on mobile */
+    .page-number,
+    .about-text,
+    .logo span {
+      display: none !important;
+    }
   }
 
   /* Small Mobile Devices (below 480px) */
@@ -1781,4 +1788,89 @@ body, p, span, div {
   .testimonial-content p {
     font-family: 'Mulish', sans-serif;
     font-weight: 400;
+  }
+
+  /* Only add/modify mobile responsive fixes */
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .content {
+      width: 100vw;
+      margin: 0 !important; /* Override any existing margins */
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Text content */
+    .content h1,
+    .content h3,
+    .content p {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Social icons */
+    .social-icons {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+  }
+
+  /* iPhone specific adjustments */
+  @media screen and (max-width: 430px) {
+    .container {
+      width: 100vw;
+    }
+
+    .content {
+      width: 100vw;
+      margin: 0 !important;
+      padding: 15px;
+    }
+
+    /* Ensure text content is properly centered */
+    .content h1 {
+      font-size: 24px;
+      width: 100%;
+    }
+
+    .content h3 {
+      font-size: 18px;
+      width: 100%;
+    }
+
+    .content p {
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+
+  /* Basic resets for mobile only */
+  @media screen and (max-width: 768px) {
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  /* Mobile view - only hide specific elements */
+  @media screen and (max-width: 768px) {
+    /* Hide 'About', page number '01', and 'Roca template' text on mobile */
+    .page-number,
+    .about-text,
+    .logo span {
+      display: none !important;
+    }
   } 
